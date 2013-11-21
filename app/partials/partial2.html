@@ -1,0 +1,31 @@
+<h2>File Explorer</h2>
+<div class="row ">
+	<div class="col-md-3 sidebar-offcanvas margin" role="navigation">
+		<div class="folder list-group list-group-item" ng-repeat="folder in folders" >
+			<li  data-toggle="collapse" data-target=".item-row.{{$index}}">
+				<h4 style="margin-left:5px;margin-right:5px">
+				<span class="glyphicon glyphicon-folder-close"></span>
+				<a href="">{{folder.name}}</a>
+				</h4>
+			</li>
+			<ul class="list-group collapse item-row {{$index}} nav nav-pills nav-stacked ">	
+				<li class="file" ng-repeat="file in folder.files" ng-click="getFile(file.name,folder.name)">
+					
+					<a class="list-group-item" href=""><span class="glyphicon glyphicon-file"></span>{{file.name}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	<div ui-sortable class="col-md-8" ng-model="currentFile.steps">
+		<table  class="table table-condensed table-bordered"
+			<tr style="border-left:10px solid grey" ng-repeat="row in currentFile.steps"  >
+
+				<td><input type="text" class="form-control" ng-model="row.column1"></td>
+				<td><input type="text" class="form-control" ng-model="row.column2"></td>
+			</tr>
+		</table>
+		<button class="btn btn-primary" ng-show="currentFile" type="button" ng-click="addNewStep()">add new step</button>
+	</div>
+	
+</div>
+<button type="button" class="btn btn-primary left-margin margin" ng-click="save()">save</button>
