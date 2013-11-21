@@ -1,4 +1,3 @@
-forked from [angular-seed](https://github.com/angular/angular-seed)
 
 ### Running the app during development
 
@@ -99,3 +98,5 @@ info.
         directivessSpec.js      --> specs for directives
         filtersSpec.js          --> specs for filters
         servicesSpec.js         --> specs for services
+
+forked from [angular-seed](https://github.com/angular/angular-seed)
