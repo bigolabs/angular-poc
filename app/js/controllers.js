@@ -7,7 +7,6 @@ angular.module('myApp.controllers', ['myApp.services', 'ui.sortable'])
   
   	$scope.file = {};
   	$scope.getFile = function(filename,folderName){
-  		//$scope.file[filename] = $scope.file[filename] || $scope.folders;
   		var currentFolder= $scope.folders.filter(function(folder){
           return folder.name === folderName;
       })[0];
